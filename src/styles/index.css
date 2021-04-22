@@ -1,28 +1,36 @@
-body{
+body {
   margin: 0;
 }
 
-.margen{
+.margen {
   margin: 100px;
 }
 
-.tabla{
+.tabla {
   width: 100%;
   text-align: left;
 }
 
-.tabla td{
+.tabla td {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-#menu{
+#menu {
   background-color: #253a46;
   padding: 20px;
   font-size: 20px;
 }
 
-#menu a{
+#menu a {
   color: #ffffff;
   padding-right: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+.red{
+  color: red;
 }

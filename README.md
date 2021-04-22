@@ -49,11 +49,11 @@ new  Promise( ( resolve, reject ) => {
 - **Redux Thunk** permite a las action creators invertir el control despachando funciones. Van a recibir dispatch como argumento y capaz llamarlo asíncronamente. Estas funciones son llamas thunks.
 - **Explicación teórica: ciclo completo de Redux**
 Cuando nuestro componente termina de cargar (`componentDidMount`) llama al Action Creator, luego el Action Creator contiene la promesa, trae los datos necesarios y luego modifica al `Reducer` para que actualice el estado usando `dispatch()` y luego lo actualizamos en el componente con el `mapStateToProps`.
-
+- **Archivos Types** Consiste en la buena práctica de establecer constantes para definir el nombre de las acciones involucradas en los actions y los reducers. Se establece un directorio llamado `types` el cual contendrá archivos JS que exportarán diferentes constantes.
 
 
 
 
 ## Recursos
 - [users json fake api](https://jsonplaceholder.typicode.com/users)
-```
+- [Pure CSS Loader](https://loading.io/css/)
