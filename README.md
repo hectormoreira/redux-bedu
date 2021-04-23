@@ -57,3 +57,4 @@ Cuando nuestro componente termina de cargar (`componentDidMount`) llama al Actio
 ## Recursos
 - [users json fake api](https://jsonplaceholder.typicode.com/users)
 - [Pure CSS Loader](https://loading.io/css/)
+- [iconos css](https://cssicon.space/#/)
