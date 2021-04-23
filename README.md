@@ -1,4 +1,5 @@
 # Redux por Bedu
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96076243-d134-42a0-9476-748839842c04/deploy-status)](https://app.netlify.com/sites/redux-bedu-hectormoreira/deploys)
 
 Notas y repo del [Curso de Redux por Bedu en Platzi](https://platzi.com/clases/redux/)
 
