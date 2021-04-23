@@ -2,6 +2,8 @@
 
 Notas y repo del [Curso de Redux por Bedu en Platzi](https://platzi.com/clases/redux/)
 
+[Proyecto en Netlify]()
+
 ### Dependencias
 
 ```bash

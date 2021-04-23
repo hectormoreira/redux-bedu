@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TRAER_POR_USUARIO, LOADING, ERROR } from "../types/publicacionesTypes";
+import { TRAER_POR_USUARIO /*, LOADING, ERROR */} from "../types/publicacionesTypes";
 
 export const traerPorUsuario = (key) => async (dispatch, getState) => {
   const { usuarios } = getState().usuariosReducer;
