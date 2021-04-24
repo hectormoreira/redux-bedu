@@ -6,7 +6,10 @@ import Spinner from "../general/Spinner";
 import FatalError from "../general/FatalError";
 
 const { traerTodos: usuariosTraerTodos } = usuariosActions;
-const { traerPorUsuario: publicacionesTraerPorUsuario } = publicacionesActions;
+const {
+  traerPorUsuario: publicacionesTraerPorUsuario,
+  abrirCerrar,
+} = publicacionesActions;
 
 class Publicaciones extends Component {
   async componentDidMount() {
@@ -79,24 +82,31 @@ class Publicaciones extends Component {
 
     const { publicaciones_key } = usuarios[key];
 
-    return publicaciones[publicaciones_key].map((publicacion) => (
-        <div
-            className="pub_titulo"
-            key={publicacion.id}
-        >
-            <h2>{publicacion.title}</h2>
-            <h3>{publicacion.body}</h3>
-        </div>
-    ))
-
+    return this.mostrarInfo(
+      publicaciones[publicaciones_key],
+      publicaciones_key
+    );
   }
+
+  mostrarInfo = (publicaciones, pub_key) =>
+    publicaciones.map((publicacion, com_key) => (
+      <div
+        key={publicacion.id}
+        className="pub_titulo"
+        onClick={() => this.props.abrirCerrar(pub_key, com_key)}
+      >
+        <h2>{publicacion.title}</h2>
+        <h3>{publicacion.body}</h3>
+        {publicacion.abierto ? "abierto" : "cerrado"}
+      </div>
+    ));
 
   render() {
     console.log(this.props);
     return (
       <div>
         {this.ponerUsuario()}
-        {this.ponerPublicaciones}
+        {this.ponerPublicaciones()}
       </div>
     );
   }
@@ -112,6 +122,7 @@ const mapStateToProps = ({ usuariosReducer, publicacionesReducer }) => {
 const mapDispatchToProps = {
   usuariosTraerTodos,
   publicacionesTraerPorUsuario,
+  abrirCerrar,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Publicaciones);
