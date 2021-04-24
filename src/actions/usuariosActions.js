@@ -1,5 +1,6 @@
 import axios from "axios";
 import { LOADING, TRAER_TODOS, ERROR } from "../types/usuariosTypes";
+import { APIURL } from "./apiUrl";
 
 export const traerTodos = () => async (dispatch) => {
   dispatch({
@@ -8,7 +9,7 @@ export const traerTodos = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      "https://jsonplaceholder.typicode.com//users"
+      `${APIURL}/users`
     );
     dispatch({
       type: TRAER_TODOS,

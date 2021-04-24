@@ -8,6 +8,7 @@ import {
   COM_ERROR,
 } from "../types/publicacionesTypes";
 import * as usuariosTypes from "../types/usuariosTypes";
+import { APIURL } from "./apiUrl";
 
 const { TRAER_TODOS: USUARIOS_TRAER_TODOS } = usuariosTypes;
 
@@ -22,7 +23,7 @@ export const traerPorUsuario = (key) => async (dispatch, getState) => {
 
   try {
     const response = await axios.get(
-      `http://localhost:3000/posts?userId=${usuario_id}`
+      `${APIURL}/posts?userId=${usuario_id}`
     );
 
     const nuevas = response.data.map((publicacion) => ({
@@ -88,7 +89,7 @@ export const traerComentarios = (pub_key, com_key) => async (dispatch,getState) 
 
   try {
     const response = await axios.get(
-      `https://jsonplaceholder.typicode.com/comments?postId=${seleccionada.id}`
+      `${APIURL}/comments?postId=${seleccionada.id}`
     );
 
     const actualizada = {
