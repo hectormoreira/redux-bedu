@@ -8,7 +8,7 @@ export const traerTodos = () => async (dispatch) => {
 
   try {
     const response = await axios.get(
-      "http://localhost:3000/users"
+      "https://jsonplaceholder.typicode.com//users"
     );
     dispatch({
       type: TRAER_TODOS,
