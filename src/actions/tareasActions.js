@@ -6,7 +6,8 @@ import {
   CAMBIO_USUARIO_ID,
   CAMBIO_TITULO,
   GUARDAR,
-  ACTUALIZAR
+  ACTUALIZAR,
+  LIMPIAR
 } from "../types/tareasTypes";
 import { APIURL } from "./apiUrl";
 
@@ -81,11 +82,7 @@ export const editar = (tarea_editada) => async (dispatch) => {
   });
 
   try {
-    const response = await axios.put(
-      `${APIURL}/todos/${tarea_editada.id}`,
-      tarea_editada
-    );
-    console.log(response.data);
+    await axios.put(`${APIURL}/todos/${tarea_editada.id}`, tarea_editada);
     dispatch({
       type: GUARDAR,
     });
@@ -128,20 +125,22 @@ export const eliminar = (tar_id) => async (dispatch) => {
   });
 
   try {
-    const response = await axios.delete(`${APIURL}/todos/${tar_id}`);
-
-    console.log(response.data);
-
+    await axios.delete(`${APIURL}/todos/${tar_id}`);
     dispatch({
       type: TRAER_TODAS,
       payload: {}
     });
 
   } catch (error) {
-    console.log(error.message);
     dispatch({
       type: ERROR,
       payload: "Servicio no disponible",
     });
   }
+}
+
+export const limpiarForma = () => (dispatch) => {
+  dispatch({
+    type: LIMPIAR
+  })
 }

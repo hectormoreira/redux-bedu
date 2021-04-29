@@ -12,15 +12,15 @@ class Tareas extends Component {
     }
   }
 
-  componentDidUpdate(){
-    if (!Object.keys(this.props.tareas).length) {
-      this.props.traerTodas();
+  componentDidUpdate() {
+    const { tareas, loading, traerTodas } = this.props;
+    if (!Object.keys(tareas).length && !loading) {
+      traerTodas();
     }
   }
 
   mostrarContenido = () => {
     const { tareas, loading, error } = this.props;
-
     if (loading) {
       return <Spinner />;
     }
@@ -53,13 +53,14 @@ class Tareas extends Component {
         <button className="m_left">
           <Link to={`/tareas/guardar/${usu_id}/${tar_id}`}>Editar</Link>
         </button>
-        <button className="m_left" onClick={() => eliminar(tar_id)}>Eliminar</button>
+        <button className="m_left" onClick={() => eliminar(tar_id)}>
+          Eliminar
+        </button>
       </div>
     ));
   };
 
   render() {
-    console.log(this.props.tareas);
     return (
       <div>
         <button>
