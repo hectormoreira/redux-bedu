@@ -1,4 +1,12 @@
-import { LOADING, TRAER_TODAS, ERROR, CAMBIO_USUARIO_ID, CAMBIO_TITULO, AGREGADA  } from "../types/tareasTypes";
+import {
+  LOADING,
+  TRAER_TODAS,
+  ERROR,
+  CAMBIO_USUARIO_ID,
+  CAMBIO_TITULO,
+  GUARDAR,
+  ACTUALIZAR,
+} from "../types/tareasTypes";
 
 const INITIAL_STATE = {
   tareas: {},
@@ -37,7 +45,7 @@ const tareasReducer = (state = INITIAL_STATE, action) => {
         titulo: action.payload,
       };
 
-    case AGREGADA:
+    case GUARDAR:
       return {
         ...state,
         tareas: {},
@@ -46,6 +54,11 @@ const tareasReducer = (state = INITIAL_STATE, action) => {
         regresar: true,
         usuario_id: "",
         titulo: "",
+      };
+    case ACTUALIZAR:
+      return {
+        ...state,
+        tareas: action.payload,
       };
 
     default:

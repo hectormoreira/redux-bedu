@@ -61,3 +61,4 @@ Cuando nuestro componente termina de cargar (`componentDidMount`) llama al Actio
 - [users json fake api](https://jsonplaceholder.typicode.com/users)
 - [Pure CSS Loader](https://loading.io/css/)
 - [iconos css](https://cssicon.space/#/)
+- [Inmutabilidad Redux](https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns#correct-approach-copying-all-levels-of-nested-data)
